@@ -1,3 +1,4 @@
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(reshape2)
 
 # Single
@@ -111,7 +112,7 @@ usa_vmd <- data.frame(
 # merge
 
 brazil <- data.frame(
-  Country = rep('BRA'),
+  Country = rep('Brazil'),
   rbind(brazil_single, brazil_vmd) %>% 
   group_by(Variable) %>% 
   summarise_at(vars(-Model), funs(mean(., na.rm = TRUE)))
@@ -129,6 +130,7 @@ importance_final <- rbind(brazil, usa)
 
 ### plot
 
+setwd(FiguresDir)
 library(extrafont)
 
 plot <- importance_final %>% 
@@ -140,11 +142,16 @@ plot <- importance_final %>%
                 position=position_dodge(.9)) +
   ylab('Variable Importance') +
   scale_fill_manual(values = c('#009c3b','#3C3B6E')) +
-  scale_x_discrete(labels = c(expression(Lag[1]),expression(Lag[2]),
-                              'Precipitation',
-                              'Max. Temperature', 'Min. Temperature')) +
+  scale_x_discrete(labels = c(
+    'Lag1', 'Lag2',
+    'Precipitation',
+    'Maximum\nTemperature',
+    'Minimum\nTemperature'
+    )) +
   theme_bw() +
-  theme(text = element_text(family = "CM Roman", size = 12))
+  theme(
+    text = element_text(family = "CM Roman", size = 12),
+  )
 
 plot %>% 
   ggsave(

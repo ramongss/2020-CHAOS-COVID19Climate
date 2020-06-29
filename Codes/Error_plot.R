@@ -18,7 +18,8 @@ plot <- error %>%
     # axis.text.y = element_text(angle = 20),
     legend.position = 'bottom'
   ) +
-  scale_fill_manual(values = c('#009c3b','#3C3B6E')) +
+  scale_fill_manual(values = c('#009c3b','#3C3B6E'),
+                    labels = c("Brazil","USA")) +
   scale_y_continuous(labels = comma)
 
 # # remove outliers
