@@ -5,7 +5,7 @@
 ![Diagram](Figures/DIAGRAM.PNG)
 
 ### Publication
-- [Preprint (ResearchGate)](https://www.researchgate.net/publication/342247189_Forecasting_Brazilian_and_American_COVID-19_cases_based_on_artificial_intelligence_coupled_with_climatic_exogenous_variables)
+- Preprint ([arXiv](https://arxiv.org/abs/2007.10981) | [ResearchGate](https://www.researchgate.net/publication/342247189_Forecasting_Brazilian_and_American_COVID-19_cases_based_on_artificial_intelligence_coupled_with_climatic_exogenous_variables))
 - [Journal paper (ScienceDirect)](https://www.sciencedirect.com/science/article/pii/S0960077920304252)
 
 ### How to cite this paper
