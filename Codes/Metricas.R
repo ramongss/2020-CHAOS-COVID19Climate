@@ -1,0 +1,10 @@
+PM<-function(yobs,ypred,dataset)
+{ 
+    x1<-rmse(yobs,ypred)/mean(dataset);
+    x2<-cor(yobs,ypred)^2;
+    x3<-mae(yobs,ypred)
+    x4<-smape(yobs,ypred)        
+    x5<-matrix(c(x1,x2,x3,x4),nrow=1,ncol=4)
+    colnames(x5)<-c("RRMSE","R2","MAE","SMAPE")
+    return(x5)
+  }
